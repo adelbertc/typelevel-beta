@@ -3,11 +3,86 @@ layout: default
 title: Your New Jekyll Site
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div class="hero">
+  <h1>{{ site.name }}</h1>
+  <p class="hero__lead">{{ site.description }}</p>
+</div>
+
+<div class="section events">
+  <h2>Upcoming Events</h2>
+  <p>An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features.</p>
+
+  {% for event in site.events limit:2 %}
+    <div class="events__event">
+      <div class="events__event-header">
+        <h3>{{ event.title }}</h3>
+        <a class="btn" href="{{ event.url }}">More</a>
+      </div>
+      <div class="events__event-body">
+        <span class="tag">{{ event.date_string }}</span>
+        <p>{{ event.description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="section projects">
+  <h2>Projects</h2>
+  <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.</p>
+
+  {% for project in site.projects limit:2 %}
+    <div class="projects__project">
+      <div class="projects__project-header">
+        <a href="{{ project.github }}">
+          <h3><span class="ico-repo"></span>{{ project.title }}</h3>
+        </a>
+        {% if project.permalink %}
+          <a class="btn" href="{{ project.permalink }}">More</a>
+        {% endif %}
+      </div>
+      <a href="{{ project.github }}">
+        <div class="projects__project-body">
+          <span class="tag">{{ project.category }}</span>
+          <p>{{ project.description }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+
+  <a class="btn" href="#">More Projects</a>
+</div>
+
+<div class="section about-us">
+  <h2>About Us</h2>
+  <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more. Design goals are approachability, modularity, documentation and efficiency.</p>
+
+  <dl class="about-us-dl about-us-dl--open-source">
+    <dt>Open Source</dt>
+    <dd>Indipendent, free and open-source software</dd>
+  </dl>
+
+  <dl class="about-us-dl about-us-dl--functional">
+    <dt>Functional</dt>
+    <dd>Pure, typeful, functional programming in Scala</dd>
+  </dl>
+
+  <dl class="about-us-dl about-us-dl--shared">
+    <dt>Shared</dt>
+    <dd>A desire to share ideas and code</dd>
+  </dl>
+
+  <dl class="about-us-dl about-us-dl--resources">
+    <dt>Resources</dt>
+    <dd>Accessible and idiomatic learning resources</dd>
+  </dl>
+
+  <dl class="about-us-dl about-us-dl--friendly">
+    <dt>Friendly</dt>
+    <dd>An inclusive, welcoming and safe environment</dd>
+  </dl>
+
+  <dl class="about-us-dl about-us-dl--friendly">
+    <dt>Friendly</dt>
+    <dd>An inclusive, welcoming and safe environment</dd>
+  </dl>
 </div>

@@ -1,0 +1,28 @@
+---
+layout: default
+title: Projects
+---
+
+<div class="section projects">
+  <h2>Other Libraries</h2>
+  <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.</p>
+
+  {% for project in site.projects %}
+    <div class="projects__project">
+      <div class="projects__project-header">
+        <a href="{{ project.github }}">
+          <h3><span class="ico-repo"></span>{{ project.title }}</h3>
+        </a>
+        {% if project.permalink %}
+          <a class="btn" href="{{ project.permalink }}">More</a>
+        {% endif %}
+      </div>
+      <a href="{{ project.github }}">
+        <div class="projects__project-body">
+          <span class="tag">{{ project.category }}</span>
+          <p>{{ project.description }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>

@@ -1,4 +1,13 @@
-name: typelevel.skala
+name: typelevel.scala
+description: Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.
 markdown: redcarpet
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
+
+collections:
+  events:
+    output: true
+    permalink: /event/:path/
+    layout: event
+  projects:
+    output: false

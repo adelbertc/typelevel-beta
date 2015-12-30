@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<ul class="sidebar">
+  {% for event in site.events %}
+    <a href="{{ event.url }}"><li>{{ event.title }}</li></a>
+  {% endfor %}
+</ul>
+
+<div class="event-container">
+  <div class="event-container__header">
+    <h3>{{ page.title }}</h3>
+  </div>
+  <div class="event-container__body">
+    <span class="tag">{{ page.date_string }}</span>
+    {{ page.content }}
+  </div>
+</div>
