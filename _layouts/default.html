@@ -8,6 +8,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
@@ -26,7 +27,7 @@
               <li {% if page.url == item.url %} class="active" {% endif %}><a href="{{ item.url }}">{{ item.title }}</a></li>
               {% if item.title == "Projects" %}
                 <li>
-                  <span class="js-subnav">Events</span>
+                  <span class="js-subnav {% if page.path contains '_event' %} active {% endif %}">Events</span>
                   <ul class="subnav">
                     {% for event in site.events limit:5 %}
                       <li>
@@ -50,8 +51,15 @@
       <div class="wrapper">
         <p>Copyright &copy; 2013-{{ site.time | date: '%Y' }} <a href="#">Lars Hupel</a> and the <a href="/">typelevel.org</a> contributors.</p>
         <ul class="navigation">
-          {% for page in site.pages %}
-            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% for item in site.pages reversed %}
+            {% unless item.exclude %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+              {% if item.title == "Projects" %}
+                <li>
+                  <a href="{{ site.events[0].url }}">Events</a>
+                </li>
+              {% endif %}
+            {% endunless %}
           {% endfor %}
         </ul>
       </div>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Home
 exclude: true
 ---
 
@@ -33,7 +33,7 @@ exclude: true
   
   <div class="projects__container">
     {% for project in site.projects limit:6 %}
-      <div class="projects__project">
+      <div class="projects__project expandable">
         <div class="projects__project-header">
           <a href="{{ project.github }}">
             <h4><span class="ico-repo"></span>{{ project.title }}</h4>
@@ -50,7 +50,7 @@ exclude: true
     {% endfor %}
   </div>
 
-  <a class="btn large center" href="#">More Projects</a>
+  <a class="btn large center" href="/projects">More Projects</a>
 </div>
 
 <div class="section about-us">

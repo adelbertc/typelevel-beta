@@ -2,31 +2,39 @@
 layout: event
 title: "Typelevel Summit Philadelphia"
 date: 02-03-16
-date_string: "March 2-3, 2016"
+
 description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
 poster: "/img/media/philly.jpg"
+date_string: "March 2-3, 2016"
+location: "Hub's Cira Centre"
+location_url: "http://thehub.com/locations/cira-centre/"
+papers_url: "http://forms.google.com"
+sponsors_url: "#sponsors"
 ---
 
-We're the Typelevel family of projects and in 2016, we're going to organize two conferences. This is the call for speakers. If you have any questions at all, please contact info@typelevel.org. This form is administrated by Lars Hupel (lars@typelevel.org) and the data you entered will be shared with the programme committee. We won't publish this information without your consent first.
-What is Typelevel anyway? It is a community of projects and individuals organized around:
+# About Summit
+The Summits are open to all, not just current contributors to and users of the Typelevel projects, and we are especially keen to encourage participation from people who are new to them. Whilst many of the Typelevel projects use somewhat "advanced" Scala, they are a lot more approachable than many people think, and a major part of Typelevel's mission is to make the ideas they embody much more widely accessible. So, if you're interested in types and pure functional programming, want to make those ideas commonplace and are willing to abide by the Typelevel code of conduct, then the Summits are for you and we'd love to see you there.
 
-- Pure, typeful, functional programming in Scala
-- Independent free and open source software
-- A desire to share ideas and code
-- Accessible and idiomatic learning resources
-- An inclusive, welcoming and safe environment
+# Call for Papers
+The Summit will feature both 30 minute and 15 minute-long talks.  
+Possible topic ranges include, but are not limited to: 
 
-## What are we looking for?
-
-For a variety of things! Possible topic ranges include, but are not limited to:
-
-- Experience reports:  "How we migrated our code base to shapeless"
-- Typelevel project updates: "What's new in Typelevel project X"
-- Your project updates: "What's new in X", where X uses Typelevel heavily
-- Big picture: "Where is Scala headed for typed FP?"
-- Tutorial-style: "Error-handling with cats", "Idiomatic ScalaCheck"
-- Tooling: "We can now use Ensime in Notepad"
-- Related work: "How language X does typed FP and what we could learn"
+- Experience reports: "How we migrated our code base to shapeless" 
+- Typelevel project updates: "What's new in Typelevel project X" 
+- Your project updates: "What's new in X", where X uses Typelevel heavily 
+- Big picture: "Where is Scala headed for typed FP?" 
+- Tutorial-style: "Error-handling with cats", "Idiomatic ScalaCheck" 
+- Tooling: "We can now use Ensime in Notepad" 
+- Related work: "How language X does typed FP and what we could learn" 
 - Non-tech issues: "Diversity in the Scala community", "Governance in Typelevel"
 
 Proposals should be related to the Typelevel family in some way or follow the Typelevel spirit.
+
+<a class="btn large" href="#">Submit your talk here</a>
+
+# Sponsors
+The planning phase is in full swing and we’ll announce more details soon. Attendance will probably be limited to about 100.
+
+<a class="btn large" href="#">Become a sponsor</a>
+
+Speakers and schedule are coming soon...

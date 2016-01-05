@@ -8,6 +8,7 @@ $border:          #F0F0F0;
 $red:             #E8223A;
 $orange:          #E74E40;
 $pink:            #FA7476;
+$dark-blue:       #042D73;
 
 
 
@@ -15,13 +16,16 @@ $pink:            #FA7476;
 ========================================================================== */
 $sans-serif:      "Avenir Next", "Avenir", -apple-system, "SF UI Text", "Roboto", "Segoe UI", sans-serif;
 $serif:           "Droid Serif", Georgia, serif;
+$monospace:       Monaco, Menlo, Consolas, Lucida Console, monospace;
 $font-medium:     500;
+$font-bold:       600;
 
 
 
 /* DIMENSIONS
 ========================================================================== */
 $content:         960px;
+$content-small:   600px;
 $medium:          780px;
 $small:           480px;
 

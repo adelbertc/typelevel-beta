@@ -1,12 +1,36 @@
 ---
 layout: default
+menu: event
 ---
-<div class="event-container">
-  <div class="event-container__header">
-    <h3>{{ page.title }}</h3>
+</div> <!-- close wrapper -->
+
+<div class="event__hero" style="background-image: url({{ page.poster }});">
+  <div class="wrapper">
+    <div class="event__header">
+      <p>{{ page.title }}</p>
+      <ul class="navigation">
+        <li><a href="#about">About Summit</a></li>
+        {% if page.papers_url %}
+          <li><a href="{{ page.papers_url }}">Call for Papers</a></li>
+        {% endif %}
+        {% if page.location_url %}
+          <li><a href="{{ page.location_url }}">Venue</a></li>
+        {% endif %}
+        {% if page.sponsors_url %}
+          <li><a href="{{ page.sponsors_url }}">Sponsors</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <h1>{{ page.title }}</h1>
+    <p class="hero__lead">
+      <strong>{{ page.date_string }}</strong>
+      at {{ page.location }}
+    </p>
   </div>
-  <div class="event-container__body">
-    <span class="tag">{{ page.date_string }}</span>
+</div>
+
+<div class="wrapper">
+  <div class="content content-small" id="about">
     {{ page.content }}
   </div>
 </div>

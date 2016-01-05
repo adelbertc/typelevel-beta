@@ -4,7 +4,7 @@ title: Projects
 ---
 
 <div class="section projects-core">
-  <h2>Core Libraries</h2>
+  <h2>Libraries</h2>
   <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.</p>
   
   {% for project in site.projects %}
@@ -51,7 +51,7 @@ title: Projects
   <div class="projects__container">
     {% for project in site.projects %}
       {% unless project.core %}
-        <div class="projects__project">
+        <div class="projects__project expandable">
           <div class="projects__project-header">
             <a href="{{ project.github }}">
               <h4><span class="ico-repo"></span>{{ project.title }}</h4>

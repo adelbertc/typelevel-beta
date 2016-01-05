@@ -3,6 +3,7 @@ description: Let the Scala compiler work for you. We provide type classes, insta
 markdown: redcarpet
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
+permalink: pretty
 
 collections:
   events:
@@ -12,6 +13,14 @@ collections:
   projects:
     output: false
 
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      permalink: /blog/:title/
+
+twitter: typelevel
 email: info@typelevel.org
 gitter: //gitter.com
 google_groups: //google.com

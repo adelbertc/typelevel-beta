@@ -3,6 +3,7 @@ layout: event
 title: "Typelevel Summit Oslo"
 date: 04-05-16
 date_string: "May 4, 2016"
+location: "a surprise location"
 description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
 poster: "/img/media/oslo.jpg"
 ---
