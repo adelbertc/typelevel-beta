@@ -1,6 +1,564 @@
+/* IMPORTS
+========================================================================== */
 @import "reset";
+@import "variables";
+@import "mixins";
 @import "syntax";
 
+
+
+/* BASICS
+========================================================================== */
 body {
-    background: white;
+  background-color: white;
+  background-image: url('../img/bg-pattern.svg');
+  background-repeat: repeat-x;
+  font-family: $sans-serif;
+  color: $dark-grey;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+h1 {
+  font-size: 10em;
+}
+
+h2 {
+  font-size: 2em;
+  letter-spacing: 0.01em;
+  margin-bottom: $spacing-unit * 1.5;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: $black;
+  margin-bottom: $spacing-unit;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 1.1em;
+  color: $black;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: $font-medium;
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: $font-medium;
+  color: $black;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: $orange;
+  border-radius: 420px;
+  text-decoration: none;
+  padding: 4px 15px;
+  font-size: 0.9em;
+  font-family: $sans-serif;
+
+  &.large {
+    display: block;
+    text-align: center;
+    width: 180px;
+    margin-top: $spacing-unit * 1.5;
+    font-size: 1em;
+    padding: 8px 0;
+  }
+
+  &.text {
+    font-size: 1em;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    color: $orange;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgba($orange, .2); 
+  }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tag {
+  @extend .btn;
+  background-color: $light-grey;
+  color: rgba($black, .6);
+}
+
+.wrapper {
+  max-width: $content;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+
+
+/* HERO/HOME
+========================================================================== */
+.header {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 1px 0 rgba($black, .1), 0 1px 3px rgba($black, .1);
+  z-index: 1337;
+  line-height: $spacing-unit * 4;
+  @include clearfix;
+
+  .header__logo {
+    float: left;
+    text-indent: -13337px;
+    background-image: url('../img/logo.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 173px; height: 100%;
+
+    a {
+      color: $black;
+      text-decoration: none;
+      font-weight: $font-medium;
+    }
+  }
+
+  .navigation {
+    float: right;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-right: $spacing-unit * 3;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &.active a {
+        color: $black;
+        font-weight: $font-medium;
+      }
+
+      a,
+      span {
+        color: rgba($black, .6);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    .subnav {
+      display: none;
+      padding: $spacing-unit / 2;
+      border-radius: 2px;
+      position: absolute;
+      background: #fff;
+      max-width: 200px;
+      line-height: 1.4;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba($black, .1), 0 1px 2px rgba($black, .1);
+      // @include transform(translateX(-50%));
+      margin-top: -$spacing-unit;
+      margin-left: -100px + $spacing-unit;
+      @include transition(.2s all ease);
+
+      &.visible {
+        display: block;
+      }
+
+      li {
+        margin-right: 0;
+        margin-bottom: $spacing-unit / 2;
+        padding-bottom: $spacing-unit / 2;
+        border-bottom: 1px solid $border;
+
+        &:last-of-type {
+          margin-bottom: 0;
+          border-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* HERO/HOME
+========================================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  padding: $spacing-unit * 9 0;
+  background-color: $red;
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba($black, .2);
+  
+  // Logo in hero
+  &:before {
+    width: 100%;
+    position: absolute;
+    left: 0; right: 0; top: 3em;
+    height: 7em;
+    background-image: url('../img/logo-hero.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    content: "";
+    opacity: .2;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin-bottom: $spacing-unit * 1.5;
+  }
+
+  .hero__lead {
+    max-width: 30em;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+}
+
+.section {
+  margin-top: $spacing-unit * 4;
+  @include clearfix;
+
+  h2 {
+    text-align: center;
+
+    & + p {
+      text-align: center;
+      max-width: $small;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 3em;
+      color: rgba($black, .6);
+    }
+  }
+}
+
+.events__event {
+  position: relative;
+  width: 44%;
+  margin-right: 6%;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+
+  h3 {
+    margin-top: $spacing-unit * 3;
+  }
+
+  p,
+  span {
+    color: $black;
+  }
+}
+
+.events__event-poster {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 260px;
+  margin-left: $spacing-unit;
+  background-size: cover;
+  text-align: left;
+
+  &:before {
+    position: absolute;
+    width: 100%; // fallback
+    width: calc(100% - 20px);
+    height: 100%;
+    margin-left: -$spacing-unit;
+    margin-top: $spacing-unit;
+    border: 3px solid $red;
+    content: "";
+    z-index: -1;
+  }
+}
+
+.projects__container {
+  @include clearfix;
+}
+
+.projects__project {
+  width: 32%;
+  margin-right: 2%;
+  float: left;
+  border: 1px solid $border;
+  box-shadow: 0 1px 2px rgba($black, .05);
+
+  &:nth-child(3n) {
+    margin-right: 0;
+    clear: right;
+  }
+
+  &.macros {
+    width: 100%;
+    margin: 0;
+
+    .projects__project-body {
+      max-height: 100%;
+    }
+  }
+}
+
+.projects__project-header {
+  border-bottom: 1px solid $border;
+  padding: $spacing-unit;
+  @include clearfix;
+
+  h4 {
+    float: left;
+    line-height: 1;
+  }
+}
+
+.projects__project-body {
+  padding: $spacing-unit;
+  max-height: 200px - $spacing-unit * 2;
+  overflow: hidden;
+
+  p {
+    margin-bottom: 0;
+    color: rgba($black, .6);
+  }
+}
+
+.projects-core {
+  .projects__project {
+    width: 100%;
+    height: auto;
+  }
+
+  .projects__project-body {
+    max-height: 100%;
+  }
+}
+
+
+.about-us-dl {
+  width: 32%;
+  margin-left: 2%;
+  float: left;
+  text-align: center;
+  border: 1px solid $border;
+  padding: $spacing-unit;
+  padding-top: $spacing-unit * 5.5;
+  box-shadow: 0 1px 2px rgba($black, .05);
+  background-position: center $spacing-unit * 2;
+  background-repeat: no-repeat;
+
+  &.about-us-dl--open-source { background-image: url('../img/ico-opensource.svg'); }
+  &.about-us-dl--functional { background-image: url('../img/ico-functional.svg'); }
+  &.about-us-dl--shared { background-image: url('../img/ico-shared.svg'); }
+  &.about-us-dl--resources { background-image: url('../img/ico-resources.svg'); }
+  &.about-us-dl--friendly { background-image: url('../img/ico-friendly.svg'); }
+
+  dt {
+    @extend h4;
+    position: relative;
+    margin-bottom: $spacing-unit;
+
+    &:after {
+      position: absolute;
+      display: block;
+      top: $spacing-unit * 1.5; left: 50%;
+      width: 2em; height: 2px;
+      margin-left: -1em;
+      background-color: $border;
+      content: "";
+    }
+  }
+
+  dd {
+    margin: 0;
+    color: rgba($black, .6);
+  }
+
+  &:nth-child(3n) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+
+
+
+/* ABOUT
+========================================================================== */
+.contact__item {
+  text-align: center;
+  text-decoration: none;
+  width: 32%;
+  margin-left: 2%;
+  margin-bottom: $spacing-unit * 4;
+  float: left;
+  padding: $spacing-unit;
+  box-shadow: inset 0 0 0 1px $border;
+  background-repeat: no-repeat;
+  background-position: $spacing-unit center;
+  line-height: 32px;
+
+  .tag {
+    float: right;
+  }
+
+  &:nth-child(3n) {
+    margin-left: 0;
+    clear: left;
+  }
+}
+
+.contact__item--google {
+  background-image: url('../img/ico-groups.png');
+  background-size: 30px 32px;
+}
+
+.contact__item--gitter {
+  background-image: url('../img/ico-gitter.svg');
+  background-size: 32px 32px;
+}
+
+.contact__item--email {
+  background-image: url('../img/ico-email.svg');
+  background-size: 32px 32px;
+}
+
+
+
+
+/* PROJECTS PAGE
+========================================================================== */
+.list {
+  margin-top: $spacing-unit;
+
+  .list__item {
+    width: 100%;
+    border-top: 1px solid $border;
+    padding: $spacing-unit 0;
+    @include clearfix; 
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    .list__item-slug {
+      float: right;
+      color: rgba($black, .6);
+    }
+
+    h6 {
+      display: inline-block;
+      font-size: 1em;
+      margin: 0;
+      font-weight: $font-medium;
+      color: $black;
+    }
+  }
+}
+
+
+
+/* EVENTS
+========================================================================== */
+
+
+
+
+/* FOOTER
+========================================================================== */
+.footer {
+  width: 100%;
+  background: $dark-grey;
+  color: #fff;
+  font-size: 0.9em;
+  line-height: $spacing-unit * 4;
+  margin-top: $spacing-unit * 4;
+  @include clearfix;
+
+  p {
+    float: left;
+    margin: 0;
+
+    a {
+      color: $pink;
+      text-decoration: none;
+    }
+  }
+
+  .navigation {
+    float: right;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-right: $spacing-unit * 3;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+        color: $grey;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+/* HELPERS
+========================================================================== */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.ico-repo {
+  display: inline-block;
+  width: 26px; height: 26px;
+  background-image: url('../img/ico-repo.svg');
+  background-repeat: no-repeat;
+  vertical-align: -35%;
+  margin-right: $spacing-unit / 2;
 }

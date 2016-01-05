@@ -3,7 +3,8 @@ layout: event
 title: "Typelevel Summit Philadelphia"
 date: 02-03-16
 date_string: "March 2-3, 2016"
-description: An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features.
+description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
+poster: "/img/media/philly.jpg"
 ---
 
 We're the Typelevel family of projects and in 2016, we're going to organize two conferences. This is the call for speakers. If you have any questions at all, please contact info@typelevel.org. This form is administrated by Lars Hupel (lars@typelevel.org) and the data you entered will be shared with the programme committee. We won't publish this information without your consent first.

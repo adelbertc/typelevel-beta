@@ -1,4 +1,4 @@
-name: typelevel.scala
+name: Typelevel.scala
 description: Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.
 markdown: redcarpet
 highlighter: pygments # or rouge or null
@@ -11,3 +11,8 @@ collections:
     layout: event
   projects:
     output: false
+
+email: info@typelevel.org
+gitter: //gitter.com
+google_groups: //google.com
+code_of_conduct: //code.of.conduct.com

@@ -1,0 +1,6 @@
+- title: "export-hook"
+  description: "Support for expanding implicit scope"
+  github: "#"
+- title: "imp"
+  description: "Summoning implicit values"
+  github: "#"

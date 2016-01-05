@@ -1,19 +1,9 @@
 ---
 layout: post
-title: "Cats"
-category: "Functional Programming"
-description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features. Design goals are approachability, modularity, documentation and efficiency."
-permalink: "https://non.github.io/cats/"
-github: "https://github.com/non/cats"
-
-core: true
-extensions:
-  - title: "Dogs"
-    description: "Functional data structures"
-    github: "#"
-  - title: "Alleycats"
-    description: "Lawless classes & illegal instances"
-    github: "#"
+title: "algebra"
+category: "Basic type classes"
+description: "A solid foundation of basic algebra type classes such as groups and rings aiming to serve as a consistent foundation for multiple libraries."
+github: "https://github.com/non/algebra"
 ---
 
 We're the Typelevel family of projects and in 2016, we're going to organize two conferences. This is the call for speakers. If you have any questions at all, please contact info@typelevel.org. This form is administrated by Lars Hupel (lars@typelevel.org) and the data you entered will be shared with the programme committee. We won't publish this information without your consent first.

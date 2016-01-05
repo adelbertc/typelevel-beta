@@ -1,0 +1,53 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin transition($args...) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+      -ms-transition: $args;
+       -o-transition: $args;
+          transition: $args;
+}
+@mixin rotate($args...) {
+  -webkit-transform: rotate($args);
+     -moz-transform: rotate($args);
+      -ms-transform: rotate($args);
+       -o-transform: rotate($args);
+          transform: rotate($args);
+}
+@mixin scale($args...) {
+  -webkit-transform: scale($args);
+     -moz-transform: scale($args);
+       -o-transform: scale($args);
+          transform: scale($args);
+}
+@mixin transform($args...) {
+  -webkit-transform: $args;
+     -moz-transform: $args;
+      -ms-transform: $args;
+       -o-transform: $args;
+          transform: $args;
+}
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+     -moz-box-shadow: $args;
+          box-shadow: $args;
+}
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}

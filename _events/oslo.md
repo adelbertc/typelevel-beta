@@ -3,7 +3,8 @@ layout: event
 title: "Typelevel Summit Oslo"
 date: 04-05-16
 date_string: "May 4, 2016"
-description: An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features.
+description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
+poster: "/img/media/oslo.jpg"
 ---
 
 We're the Typelevel family of projects and in 2016, we're going to organize two conferences. This is the call for speakers. If you have any questions at all, please contact info@typelevel.org. This form is administrated by Lars Hupel (lars@typelevel.org) and the data you entered will be shared with the programme committee. We won't publish this information without your consent first.
