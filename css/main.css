@@ -836,7 +836,8 @@ blockquote {
     background-image: url("../img/logo.svg");
     background-repeat: no-repeat;
     background-position: left center;
-    width: 173px;
+    background-size: 140px 47px;
+    width: 140px;
     height: 100%;
     overflow: auto; }
     .header .header__logo a {
@@ -964,7 +965,7 @@ blockquote {
     position: absolute;
     left: 0;
     right: 0;
-    top: 3em;
+    top: 2em;
     height: 7em;
     background-image: url("../img/logo-hero.svg");
     background-repeat: no-repeat;

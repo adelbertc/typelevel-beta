@@ -236,7 +236,8 @@ blockquote {
     background-image: url('../img/logo.svg');
     background-repeat: no-repeat;
     background-position: left center;
-    width: 173px; height: 100%;
+    background-size: 140px 47px;
+    width: 140px; height: 100%;
     overflow: auto;
 
     a {
@@ -403,7 +404,7 @@ blockquote {
   &:before {
     width: 100%;
     position: absolute;
-    left: 0; right: 0; top: 3em;
+    left: 0; right: 0; top: 2em;
     height: 7em;
     background-image: url('../img/logo-hero.svg');
     background-repeat: no-repeat;
