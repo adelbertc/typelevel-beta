@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Home
-exclude: true
+title: Typelevel.scala
+class: home
 ---
 
 </div>
@@ -32,7 +32,7 @@ exclude: true
   <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.</p>
   
   <div class="projects__container">
-    {% for project in site.projects limit:6 %}
+    {% for project in site.projects limit:3 %}
       <div class="projects__project expandable">
         <div class="projects__project-header">
           <a href="{{ project.github }}">

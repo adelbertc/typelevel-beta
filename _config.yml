@@ -4,6 +4,10 @@ markdown: redcarpet
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 permalink: pretty
+paginate: 10
+paginate_path: "/blog/:num/"
+
+gems: [jekyll-paginate]
 
 collections:
   events:

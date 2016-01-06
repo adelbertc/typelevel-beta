@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Projects
+class: projects-page
 ---
 
 <div class="section projects-core">
@@ -9,7 +10,7 @@ title: Projects
   
   {% for project in site.projects %}
     {% if project.core == true %}
-      <div class="projects__project">
+      <div class="projects__project expandable-core">
         <div class="projects__project-header">
           <a href="{{ project.github }}">
             <h4>

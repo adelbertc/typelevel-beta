@@ -61,6 +61,21 @@ h6 {
   margin-top: 0;
 }
 
+@include media-query($small) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+}
+
 a {
   color: inherit;
 }
@@ -112,11 +127,10 @@ pre {
 }
 
 p code {
+  padding: 1px 4px;
   background: $border;
   font-size: 0.9em;
-  -webkit-box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
-  padding: 1px 4px;
+  @include box-shadow(0 0 0 1px rgba(#fff, .1));
   border-radius: 3px;
 }
 
@@ -144,6 +158,10 @@ blockquote {
   max-width: $content;
   margin: 0 auto;
   @include clearfix;
+
+  @include media-query($content) {
+    padding: 0 $spacing-unit;
+  }
 }
 
 .content {
@@ -189,7 +207,7 @@ blockquote {
 .header {
   position: relative;
   background-color: #fff;
-  box-shadow: 0 1px 0 rgba($black, .1), 0 1px 3px rgba($black, .1);
+  @include box-shadow(0 1px 0 rgba($black, .1), 0 1px 3px rgba($black, .1));
   z-index: 1337;
   line-height: $spacing-unit * 4;
   @include clearfix;
@@ -201,11 +219,23 @@ blockquote {
     background-repeat: no-repeat;
     background-position: left center;
     width: 173px; height: 100%;
+    overflow: auto;
 
     a {
       color: $black;
       text-decoration: none;
       font-weight: $font-medium;
+    }
+  }
+
+  .header__menu {
+    display: none;
+    float: right;
+    text-decoration: none;
+    color: rgba($black, .6);
+
+    @include media-query($small) {
+      display: block;
     }
   }
 
@@ -246,7 +276,7 @@ blockquote {
       max-width: 200px;
       line-height: 1.4;
       text-align: center;
-      box-shadow: 0 0 0 1px rgba($black, .1), 0 1px 2px rgba($black, .1);
+      @include box-shadow(0 0 0 1px rgba($black, .1), 0 1px 2px rgba($black, .1));
       // @include transform(translateX(-50%));
       margin-top: -$spacing-unit;
       margin-left: -100px + $spacing-unit;
@@ -269,6 +299,53 @@ blockquote {
         }
       }
     }
+
+    @include media-query($small) {
+      display: none;
+      float: none;
+      position: relative;
+      background-color: #fff;
+      line-height: 1;
+      width: 100%;
+      clear: both;
+      padding-bottom: $spacing-unit;
+      text-align: right;
+
+      &.visible {
+        display: block;
+      }
+
+      li {
+        display: block;
+        margin-bottom: $spacing-unit;
+        width: 100%;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .subnav {
+        position: relative;
+        margin: 0;
+        display: none;
+        max-width: 100%;
+        @include box-shadow(none);
+        padding: 0;
+        text-align: right;
+
+        li {
+          padding: 0;
+          margin-top: $spacing-unit;
+          margin-bottom: 0;
+          border: none;
+
+          a {
+            color: rgba($black, .4);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -288,6 +365,13 @@ blockquote {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba($black, .2);
+
+  @include media-query($small) {
+    padding-top: $spacing-unit * 8;
+    padding-bottom: $spacing-unit * 5;
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+  }
   
   // Logo in hero
   &:before {
@@ -301,11 +385,19 @@ blockquote {
     background-size: contain;
     content: "";
     opacity: .2;
+
+    @include media-query($small) {
+      height: 5em;
+    }
   }
 
   h1 {
     font-size: 4em;
     margin-bottom: $spacing-unit * 1.5;
+
+    @include media-query($small) {
+      font-size: 2em;
+    }
   }
 
   .hero__lead {
@@ -313,6 +405,10 @@ blockquote {
     font-size: 1.2em;
     margin: 0 auto;
     color: #fff;
+
+    @include media-query($small) {
+      font-size: 1em;
+    }
   }
 }
 
@@ -336,14 +432,25 @@ blockquote {
 
 .events__event {
   position: relative;
-  width: 44%;
-  margin-right: 6%;
+  width: 46%;
+  margin-right: 8%;
   float: left;
   overflow: hidden;
   text-align: center;
 
+  @include media-query($small) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: $spacing-unit * 3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &:nth-child(even) {
     margin-right: 0;
+    clear: right;
   }
 
   h3 {
@@ -352,7 +459,11 @@ blockquote {
 
   p,
   span {
-    color: $black;
+    color: rgba($black, .8);
+  }
+
+  .meta {
+    font-style: italic;
   }
 }
 
@@ -364,6 +475,10 @@ blockquote {
   margin-left: $spacing-unit;
   background-size: cover;
   text-align: left;
+
+  @include media-query($content) {
+    height: 190px;
+  }
 
   &:before {
     position: absolute;
@@ -385,13 +500,34 @@ blockquote {
 .projects__project {
   width: 32%;
   margin-right: 2%;
+  margin-bottom: $spacing-unit;
   float: left;
   border: 1px solid $border;
-  box-shadow: 0 1px 2px rgba($black, .05);
+  @include box-shadow(0 1px 2px rgba($black, .05));
 
-  &:nth-child(3n) {
-    margin-right: 0;
-    clear: right;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media-query($content) {
+    width: 49%;
+    margin-right: 2%;
+
+    &:nth-child(even) {
+      margin-right: 0;
+      clear: right;
+    }
+  }
+  
+  @include media-query($small) {
+    width: 100%;
+  }
+  
+  @include media-query-min($content) {
+    &:nth-child(3n) {
+      margin-right: 0;
+      clear: right;
+    }
   }
 
   &.macros {
@@ -418,17 +554,20 @@ blockquote {
 .projects__project-body {
   position: relative;
   padding: $spacing-unit;
-  max-height: 200px - $spacing-unit * 2;
+  max-height: 200px;
   overflow: hidden;
 
   &.expanded {
     max-height: 100%;
   }
 
-  .expand {
+  .expand,
+  .expand-core {
     position: absolute;
-    right: $spacing-unit;
+    bottom: $spacing-unit; right: $spacing-unit;
+    @include box-shadow(-5px 0 0 #fff);
     border-bottom: 2px solid $border;
+    background-color: #fff;
     color: $black;
     cursor: pointer;
   }
@@ -436,6 +575,43 @@ blockquote {
   p {
     margin-bottom: 0;
     color: rgba($black, .6);
+  }
+}
+
+@include media-query($content) {
+  .home {
+    .projects__container {
+      padding: 0 $spacing-unit * 2;
+    }
+
+    .projects__project {
+      display: none;
+      width: 49%;
+      margin-right: 2%;
+    }
+
+    .projects__project:nth-child(2) {
+      margin-right: 0;
+    }
+
+    .projects__project:nth-child(1),
+    .projects__project:nth-child(2) {
+      display: block;
+    }
+  }
+}
+
+@include media-query($small) {
+  .home {
+    .projects__container {
+      padding: 0;
+    }
+
+    .projects__project {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: $spacing-unit
+    }
   }
 }
 
@@ -450,19 +626,55 @@ blockquote {
   }
 }
 
+@include media-query($content) {
+  .about-us {
+    padding: 0 $spacing-unit * 2;
+  }
+}
+
+@include media-query($small) {
+  .about-us {
+    padding: 0;
+  }
+}
+
 
 .about-us-dl {
   width: 32%;
   height: 240px;
   margin-left: 2%;
+  margin-top: 0;
+  margin-bottom: $spacing-unit;
   float: left;
   text-align: center;
   border: 1px solid $border;
   padding: $spacing-unit;
   padding-top: $spacing-unit * 5.5;
-  box-shadow: 0 1px 2px rgba($black, .05);
+  @include box-shadow(0 1px 2px rgba($black, .05));
   background-position: center $spacing-unit * 2;
   background-repeat: no-repeat;
+
+  @include media-query($content) {
+    width: 49%;
+    margin-left: 2%;
+
+    &:nth-child(odd) {
+      margin-left: 0;
+      clear: left;
+    }
+  }
+
+  @include media-query($small) {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  @include media-query-min($content) {
+    &:nth-child(3n) {
+      margin-left: 0;
+      clear: left;
+    }
+  }
 
   &.about-us-dl--open-source { background-image: url('../img/ico-opensource.svg'); }
   &.about-us-dl--functional { background-image: url('../img/ico-functional.svg'); }
@@ -490,37 +702,60 @@ blockquote {
     margin: 0;
     color: rgba($black, .6);
   }
-
-  &:nth-child(3n) {
-    margin-left: 0;
-    clear: left;
-  }
 }
 
 
 
 /* ABOUT
 ========================================================================== */
+.contact__items {
+  margin-bottom: $spacing-unit * 4;
+  @include clearfix;
+}
+
 .contact__item {
+  display: block;
   text-align: center;
   text-decoration: none;
   width: 32%;
   margin-left: 2%;
-  margin-bottom: $spacing-unit * 4;
   float: left;
   padding: $spacing-unit;
-  box-shadow: inset 0 0 0 1px $border;
+  @include box-shadow(inset 0 0 0 1px $border);
   background-repeat: no-repeat;
   background-position: $spacing-unit center;
   line-height: 32px;
+  
+  @include media-query($content) {
+    width: 49%;
+    margin-bottom: $spacing-unit;
+
+    &:nth-child(odd) {
+      margin-left: 0;
+      clear: left;
+    }
+
+    &:nth-child(3) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @include media-query($small) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @include media-query-min($content) {
+    &:nth-child(1) {
+      margin-left: 0;
+      clear: left;
+    }
+  }
 
   .tag {
     float: right;
-  }
-
-  &:nth-child(3n) {
-    margin-left: 0;
-    clear: left;
   }
 }
 
@@ -544,6 +779,16 @@ blockquote {
 
 /* PROJECTS PAGE
 ========================================================================== */
+.projects-page {
+  .section {
+    margin-top: $spacing-unit;
+
+    &:first-of-type {
+      margin-top: $spacing-unit * 4;
+    }
+  }
+}
+
 .list {
   margin-top: $spacing-unit;
 
@@ -565,6 +810,10 @@ blockquote {
     .list__item-slug {
       float: right;
       color: rgba($black, .6);
+
+      @include media-query($small) {
+        display: none;
+      }
     }
 
     h6 {
@@ -585,7 +834,7 @@ blockquote {
   position: relative;
   width: 100%;
   margin-bottom: $spacing-unit * 4;
-  padding: 0 0 $spacing-unit * 7;
+  padding: 0 0 $spacing-unit * 6;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -593,6 +842,10 @@ blockquote {
   text-shadow: 0 1px 1px rgba($black, .2);
   overflow: hidden;
   @include clearfix;
+
+  @include media-query($small) {
+    padding: $spacing-unit * 5 0;
+  }
 
   &:before {
     position: absolute;
@@ -611,6 +864,10 @@ blockquote {
 
   h1 {
     font-size: 4em;
+
+    @include media-query($small) {
+      font-size: 2em;
+    }
   }
 
   strong {
@@ -621,17 +878,27 @@ blockquote {
   .hero__lead {
     font-size: 1.2em;
     margin-top: $spacing-unit * 2;
+    margin-bottom: 0;
     color: #fff;
+
+    @include media-query($small) {
+      font-size: 1em;
+      margin-top: $spacing-unit;
+    }
   }
 
   .event__header {
     width: 100%;
-    margin-bottom: $spacing-unit * 5;
+    margin-bottom: $spacing-unit * 6;
     padding-top: $spacing-unit;
     padding-bottom: $spacing-unit;
     border-bottom: 1px solid rgba(#fff, .1);
     font-size: 0.9em;
-    @include clearfix;
+    @include clearfix; 
+
+    @include media-query($small) {
+      display: none;
+    }
 
     p {
       float: left;
@@ -649,7 +916,10 @@ blockquote {
     li {
       display: inline-block;
       margin-right: $spacing-unit * 5;
-      
+
+      @include media-query($content) {
+        margin-right: $spacing-unit * 2;
+      }
 
       &:last-of-type{
         margin-right: 0;
@@ -683,6 +953,10 @@ blockquote {
   margin-left: $spacing-unit * 3;
   padding-left: $spacing-unit;
   border-left: 2px solid $border;
+
+  @include media-query($content) {
+    display: none;
+  }
 
   .sidebar__about {
     margin-bottom: $spacing-unit * 2;
@@ -720,13 +994,38 @@ blockquote {
 .post__meta { // on /blog
   margin-top: $spacing-unit;
   color: rgba($black, .6);
+  @include clearfix;
+
+  p {
+    float: left;
+    height: 50px;
+    margin: 0;
+    line-height: 50px;
+  }
 }
 
 .portrait {
+  display: block;
+  float: left;
   width: 50px; height: 50px;
   margin-right: $spacing-unit / 2;
   border-radius: 420px;
   vertical-align: middle;
+}
+
+.pagination {
+  margin-top: $spacing-unit * 2;
+  padding-top: $spacing-unit * 2;
+  border-top: 1px solid $border;
+  @include clearfix;
+
+  .next {
+    float: right;
+  }
+
+  .prev {
+    float: left;
+  }
 }
 
 
@@ -743,10 +1042,26 @@ blockquote {
   margin-top: $spacing-unit * 4;
   @include clearfix;
 
+  @include media-query($content) {
+    padding: $spacing-unit;
+    line-height: 24px;
+  }
+
   p {
     float: left;
     margin: 0;
     color: #fff;
+
+    @include media-query($content) {
+      float: none;
+      width: 100%;
+      margin: 0 auto $spacing-unit / 2;
+      text-align: center;
+    }
+
+    @include media-query($small) {
+      margin-bottom: $spacing-unit;
+    }
 
     a {
       color: $pink;
@@ -759,10 +1074,19 @@ blockquote {
     margin: 0;
     padding: 0;
 
+    @include media-query($content) {
+      float: none;
+      text-align: center;
+    }
+
     li {
       list-style: none;
       display: inline-block;
       margin-right: $spacing-unit * 3;
+
+      @include media-query($small) {
+        margin-right: $spacing-unit * 1;
+      }
 
       &:last-of-type {
         margin-right: 0;

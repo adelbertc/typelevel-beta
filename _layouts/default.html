@@ -13,7 +13,7 @@
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
   </head>
-  <body>
+  <body {%if page.class %} class="{{ page.class }}"{% endif %}>
     <div class="header">
       <div class="wrapper">
         <a href="/">
@@ -21,24 +21,29 @@
             {{ site.name }}
           </div>
         </a>
+        <a href="#" class="header__menu">
+          Menu
+        </a>
         <ul class="navigation">
-          {% for item in site.pages reversed %}
-            {% unless item.exclude %}
-              <li {% if page.url == item.url %} class="active" {% endif %}><a href="{{ item.url }}">{{ item.title }}</a></li>
-              {% if item.title == "Projects" %}
+          <li {% if page.path contains 'projects' %} class="active" {% endif %}>
+            <a href="/projects">Projects</a>
+          </li>
+          <li>
+            <span class="js-subnav {% if page.path contains '_event' %} active {% endif %}">Events</span>
+            <ul class="subnav">
+              {% for event in site.events limit:5 %}
                 <li>
-                  <span class="js-subnav {% if page.path contains '_event' %} active {% endif %}">Events</span>
-                  <ul class="subnav">
-                    {% for event in site.events limit:5 %}
-                      <li>
-                        <a href="{{ event.url }}">{{ event.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
+                  <a href="{{ event.url }}">{{ event.title }}</a>
                 </li>
-              {% endif %}
-            {% endunless %}
-          {% endfor %}
+              {% endfor %}
+            </ul>
+          </li>
+          <li {% if page.path contains 'blog' or page.path contains '_posts' %} class="active" {% endif %}>
+            <a href="/blog">Blog</a>
+          </li>
+          <li {% if page.path contains 'about' %} class="active" {% endif %}>
+            <a href="/about">About</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -51,16 +56,10 @@
       <div class="wrapper">
         <p>Copyright &copy; 2013-{{ site.time | date: '%Y' }} <a href="#">Lars Hupel</a> and the <a href="/">typelevel.org</a> contributors.</p>
         <ul class="navigation">
-          {% for item in site.pages reversed %}
-            {% unless item.exclude %}
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-              {% if item.title == "Projects" %}
-                <li>
-                  <a href="{{ site.events[0].url }}">Events</a>
-                </li>
-              {% endif %}
-            {% endunless %}
-          {% endfor %}
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="{{ site.events[0].url }}">Events</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </div>
     </div>
