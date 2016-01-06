@@ -10,14 +10,14 @@ menu: event
       <p>{{ page.title }}</p>
       <ul class="navigation">
         <li><a href="#about">About Summit</a></li>
-        {% if page.papers_url %}
-          <li><a href="{{ page.papers_url }}">Call for Papers</a></li>
+        {% if page.papers_section %}
+          <li><a href="#call-for-papers">Call for Papers</a></li>
         {% endif %}
-        {% if page.location_url %}
-          <li><a href="{{ page.location_url }}">Venue</a></li>
+        {% if page.location_section %}
+          <li><a href="#venue">Venue</a></li>
         {% endif %}
-        {% if page.sponsors_url %}
-          <li><a href="{{ page.sponsors_url }}">Sponsors</a></li>
+        {% if page.sponsors_section %}
+          <li><a href="#sponsors">Sponsors</a></li>
         {% endif %}
       </ul>
     </div>

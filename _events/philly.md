@@ -7,15 +7,15 @@ description: "An experimental library intended to provide abstractions for funct
 poster: "/img/media/philly.jpg"
 date_string: "March 2-3, 2016"
 location: "Hub's Cira Centre"
-location_url: "http://thehub.com/locations/cira-centre/"
-papers_url: "http://forms.google.com"
-sponsors_url: "#sponsors"
+location_section: true
+papers_section: true
+sponsors_section: true
 ---
 
-# About Summit
+## About Summit
 The Summits are open to all, not just current contributors to and users of the Typelevel projects, and we are especially keen to encourage participation from people who are new to them. Whilst many of the Typelevel projects use somewhat "advanced" Scala, they are a lot more approachable than many people think, and a major part of Typelevel's mission is to make the ideas they embody much more widely accessible. So, if you're interested in types and pure functional programming, want to make those ideas commonplace and are willing to abide by the Typelevel code of conduct, then the Summits are for you and we'd love to see you there.
 
-# Call for Papers
+## Call for Papers
 The Summit will feature both 30 minute and 15 minute-long talks.  
 Possible topic ranges include, but are not limited to: 
 
@@ -32,9 +32,12 @@ Proposals should be related to the Typelevel family in some way or follow the Ty
 
 <a class="btn large" href="#">Submit your talk here</a>
 
-# Sponsors
+## Sponsors
 The planning phase is in full swing and we’ll announce more details soon. Attendance will probably be limited to about 100.
 
 <a class="btn large" href="#">Become a sponsor</a>
 
 Speakers and schedule are coming soon...
+
+# Venue
+This event will take place at Hub's Cira Centre.

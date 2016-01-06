@@ -24,7 +24,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 20
         }, 1000);
         return false;
       }
@@ -49,15 +49,26 @@ $(function() {
     $(this).parent().text(original);
   });
 
-  // Expandable core projects
-  $('.expandable-core .projects__project-body').html(function() {
-    $('.projects__project-body-extensions', this).hide();
-    $(this).append('<span class="expand-core">Expand</span>');
-  });
+  if ( $(window).width() < 480 ) {
+    // Expandable core projects
+    $('.expandable-core .projects__project-body').html(function() {
+      $('.projects__project-body-extensions', this).hide();
+      $(this).append('<span class="expand-core">Expand</span>');
+    });
 
-  $('.expand-core').click(function() {
-    $(this).prev('.projects__project-body-extensions').show();
-    $(this).remove();
+    $('.expand-core').click(function() {
+      $(this).prev('.projects__project-body-extensions').show();
+      $(this).remove();
+    });
+  }
+
+  // CoC expanding
+  $('.js-expand-coc').click(function(e) {
+    e.preventDefault();
+    $('#CoC').show();
+    $('html,body').animate({
+      scrollTop: $('#CoC').offset().top - 20
+    }, 1000);
   });
   
 });

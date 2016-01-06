@@ -95,6 +95,11 @@ strong {
   padding: 4px 15px;
   font-size: 0.9em;
   font-family: $sans-serif;
+  @include ease;
+
+  &:hover {
+    background-color: #E74040;
+  }
 
   &.large {
     display: block;
@@ -113,6 +118,10 @@ strong {
     color: $orange;
     padding-bottom: 2px;
     border-bottom: 2px solid rgba($orange, .2); 
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   &.center {
@@ -144,6 +153,10 @@ blockquote {
   @extend .btn;
   background-color: $light-grey;
   color: rgba($black, .6);
+
+  &:hover {
+    background-color: $light-grey;
+  }
 }
 
 .side-note {
@@ -198,6 +211,11 @@ blockquote {
 
 .content-small {
   max-width: $content-small;
+
+  &.centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
@@ -258,6 +276,11 @@ blockquote {
         color: rgba($black, .6);
         text-decoration: none;
         cursor: pointer;
+        @include ease;
+
+        &:hover {
+          color: $black;
+        }
       }
     }
 
@@ -268,7 +291,6 @@ blockquote {
     }
 
     .subnav {
-      display: none;
       padding: $spacing-unit / 2;
       border-radius: 2px;
       position: absolute;
@@ -280,10 +302,14 @@ blockquote {
       // @include transform(translateX(-50%));
       margin-top: -$spacing-unit;
       margin-left: -100px + $spacing-unit;
-      @include transition(.2s all ease);
+      @include transition(all .3s cubic-bezier(0.35,1.60,0.7,1));
+      @include transform(scale(0));
+      transform-origin: 50% -10px;
+      opacity: 0;
 
       &.visible {
-        display: block;
+        opacity: 1;
+        @include transform(scale(1));
       }
 
       li {
@@ -357,7 +383,7 @@ blockquote {
   position: relative;
   width: 100%;
   padding: $spacing-unit * 8.5 0;
-  background-color: $red;
+  background-color: $dark-red;
   background-image: url('../img/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -459,7 +485,7 @@ blockquote {
 
   p,
   span {
-    color: rgba($black, .8);
+    color: rgba($black, .6);
   }
 
   .meta {
@@ -564,7 +590,7 @@ blockquote {
   .expand,
   .expand-core {
     position: absolute;
-    bottom: $spacing-unit; right: $spacing-unit;
+    bottom: $spacing-unit - 2px; right: $spacing-unit;
     @include box-shadow(-5px 0 0 #fff);
     border-bottom: 2px solid $border;
     background-color: #fff;
@@ -676,11 +702,30 @@ blockquote {
     }
   }
 
-  &.about-us-dl--open-source { background-image: url('../img/ico-opensource.svg'); }
-  &.about-us-dl--functional { background-image: url('../img/ico-functional.svg'); }
-  &.about-us-dl--shared { background-image: url('../img/ico-shared.svg'); }
-  &.about-us-dl--resources { background-image: url('../img/ico-resources.svg'); }
-  &.about-us-dl--friendly { background-image: url('../img/ico-friendly.svg'); }
+  &.about-us-dl--open-source {
+    background-image: url('../img/ico-opensource.svg');
+    background-size: 50px 50px;
+  }
+  &.about-us-dl--functional {
+    background-image: url('../img/ico-functional.svg');
+    background-size: 31px 50px;
+  }
+  &.about-us-dl--shared {
+    background-image: url('../img/ico-shared.svg');
+    background-size: 45px 48px;
+  }
+  &.about-us-dl--resources {
+    background-image: url('../img/ico-resources.svg');
+    background-size: 50px 40px;
+  }
+  &.about-us-dl--friendly {
+    background-image: url('../img/ico-friendly.svg');
+    background-size: 60px 43px;
+  }
+  &.about-us-dl--modular {
+    background-image: url('../img/ico-modular.svg');
+    background-size: 56px 39px;
+  }
 
   dt {
     @extend h4;
@@ -772,6 +817,14 @@ blockquote {
 .contact__item--email {
   background-image: url('../img/ico-email.svg');
   background-size: 32px 32px;
+}
+
+#CoC {
+  display: none;
+
+  &:target {
+    display: block;
+  }
 }
 
 
@@ -921,6 +974,10 @@ blockquote {
         margin-right: $spacing-unit * 2;
       }
 
+      &:hover a {
+        color: #fff;
+      }
+
       &:last-of-type{
         margin-right: 0;
         clear: right;
@@ -929,10 +986,7 @@ blockquote {
       a {
         text-decoration: none;
         color: rgba(#fff, .8);
-
-        &:hover {
-          color: #fff;
-        }
+        @include ease;
       }
     }
   }
@@ -1064,8 +1118,13 @@ blockquote {
     }
 
     a {
-      color: $pink;
+      color: $orange;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom-color: $orange;
+      }
     }
   }
 
@@ -1095,6 +1154,11 @@ blockquote {
       a {
         color: $grey;
         text-decoration: none;
+        @include ease;
+
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }
@@ -1107,6 +1171,7 @@ blockquote {
 .pull-left {
   float: left;
 }
+
 .pull-right {
   float: right;
 }

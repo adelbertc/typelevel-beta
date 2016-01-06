@@ -21,7 +21,10 @@ class: home
       <div class="events__event-poster" style="background-image: url({{ event.poster }})"></div>
       <h3>{{ event.title }}</h3>
       <span class="meta">{{ event.date_string }}</span>
-      <p>{{ event.description }}</p>
+      <p>
+       {{ event.description }}
+       {% if event.papers_section %}<a class="btn text" href="{{ event.url | append:'#papers' }}">Call for Papers</a> now open.{% endif %}
+      </p>
       <a class="btn large center" href="{{ event.url }}">Learn More</a>
     </div>
   {% endfor %}
@@ -82,8 +85,8 @@ class: home
     <dd>An inclusive, welcoming and safe environment</dd>
   </dl>
 
-  <dl class="about-us-dl about-us-dl--friendly">
-    <dt>Friendly</dt>
+  <dl class="about-us-dl about-us-dl--modular">
+    <dt>Modular</dt>
     <dd>An inclusive, welcoming and safe environment</dd>
   </dl>
 </div>

@@ -59,6 +59,14 @@ title: About
   <h2>Code of Conduct</h2>
   <p>Typelevel is dedicated to providing a harassment-free community for everyone, regardless of gender or anything to do with it (identity, history, expression, non-binary gender, etc.), sexual orientation, disability, physical appearance, body size, race, religion, and programming background.<br><br>
 
-  <a class="btn text center" href="{{ site.code_of_conduct }}">Read full Code of Conduct</a></p>
+  <a class="btn text center js-expand-coc" href="#">Read full Code of Conduct</a></p>
+
+  {% for page in site.pages %}
+    {% if page.path contains "conduct" %}
+      <div class="content content-small centered coc" id="CoC">
+        {{ page.content | markdownify }}
+      </div>
+    {% endif %}
+  {% endfor %}
 
 </div>

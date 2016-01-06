@@ -691,7 +691,7 @@ h6  {
   font-weight: 500;
   margin-top: 0; }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 690px) {
   h1 {
     font-size: 2em; }
   h2 {
@@ -711,12 +711,15 @@ strong {
 .btn, .tag {
   display: inline-block;
   color: #fff;
-  background-color: #E74E40;
+  background-color: #F95A66;
   border-radius: 420px;
   text-decoration: none;
   padding: 4px 15px;
   font-size: 0.9em;
-  font-family: "Avenir Next", "Avenir", -apple-system, "SF UI Text", "Roboto", "Segoe UI", sans-serif; }
+  font-family: "Avenir Next", "Avenir", -apple-system, "SF UI Text", "Roboto", "Segoe UI", sans-serif;
+  transition: 0.2s all ease; }
+  .btn:hover, .tag:hover {
+    background-color: #E74040; }
   .btn.large, .large.tag {
     display: block;
     text-align: center;
@@ -729,9 +732,11 @@ strong {
     padding: 0;
     background-color: transparent;
     border-radius: 0;
-    color: #E74E40;
+    color: #F95A66;
     padding-bottom: 2px;
-    border-bottom: 2px solid rgba(231, 78, 64, 0.2); }
+    border-bottom: 2px solid rgba(249, 90, 102, 0.2); }
+    .btn.text:hover, .text.tag:hover {
+      background-color: transparent; }
   .btn.center, .center.tag {
     margin-left: auto;
     margin-right: auto; }
@@ -755,6 +760,8 @@ blockquote {
 .tag {
   background-color: #EEF2F4;
   color: rgba(2, 21, 33, 0.6); }
+  .tag:hover {
+    background-color: #EEF2F4; }
 
 .side-note {
   color: rgba(2, 21, 33, 0.6);
@@ -807,6 +814,9 @@ blockquote {
 
 .content-small {
   max-width: 600px; }
+  .content-small.centered {
+    margin-left: auto;
+    margin-right: auto; }
 
 /* HERO/HOME
 ========================================================================== */
@@ -838,7 +848,7 @@ blockquote {
     float: right;
     text-decoration: none;
     color: rgba(2, 21, 33, 0.6); }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .header .header__menu {
         display: block; } }
   .header .navigation {
@@ -855,13 +865,16 @@ blockquote {
       .header .navigation li span {
         color: rgba(2, 21, 33, 0.6);
         text-decoration: none;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: 0.2s all ease; }
+        .header .navigation li a:hover,
+        .header .navigation li span:hover {
+          color: #021521; }
     .header .navigation li.active a,
     .header .navigation span.active {
       color: #021521;
       font-weight: 500; }
     .header .navigation .subnav {
-      display: none;
       padding: 10px;
       border-radius: 2px;
       position: absolute;
@@ -872,9 +885,16 @@ blockquote {
       box-shadow: 0 0 0 1px rgba(2, 21, 33, 0.1), 0 1px 2px rgba(2, 21, 33, 0.1);
       margin-top: -20px;
       margin-left: -80px;
-      transition: 0.2s all ease; }
+      transition: all 0.3s cubic-bezier(0.35, 1.6, 0.7, 1);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transform-origin: 50% -10px;
+              transform-origin: 50% -10px;
+      opacity: 0; }
       .header .navigation .subnav.visible {
-        display: block; }
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1); }
       .header .navigation .subnav li {
         margin-right: 0;
         margin-bottom: 10px;
@@ -884,7 +904,7 @@ blockquote {
           margin-bottom: 0;
           border-bottom: 0;
           padding-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .header .navigation {
         display: none;
         float: none;
@@ -925,7 +945,7 @@ blockquote {
   position: relative;
   width: 100%;
   padding: 170px 0;
-  background-color: #E8223A;
+  background-color: #BD1A30;
   background-image: url("../img/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -933,7 +953,7 @@ blockquote {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(2, 21, 33, 0.2); }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 690px) {
     .hero {
       padding-top: 160px;
       padding-bottom: 100px;
@@ -952,13 +972,13 @@ blockquote {
     background-size: contain;
     content: "";
     opacity: .2; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .hero:before {
         height: 5em; } }
   .hero h1 {
     font-size: 4em;
     margin-bottom: 30px; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .hero h1 {
         font-size: 2em; } }
   .hero .hero__lead {
@@ -966,7 +986,7 @@ blockquote {
     font-size: 1.2em;
     margin: 0 auto;
     color: #fff; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .hero .hero__lead {
         font-size: 1em; } }
 
@@ -980,7 +1000,7 @@ blockquote {
     text-align: center; }
     .section h2 + p {
       text-align: center;
-      max-width: 480px;
+      max-width: 690px;
       margin-right: auto;
       margin-left: auto;
       margin-bottom: 3em;
@@ -993,7 +1013,7 @@ blockquote {
   float: left;
   overflow: hidden;
   text-align: center; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 690px) {
     .events__event {
       width: 100%;
       margin-right: 0;
@@ -1007,7 +1027,7 @@ blockquote {
     margin-top: 60px; }
   .events__event p,
   .events__event span {
-    color: rgba(2, 21, 33, 0.8); }
+    color: rgba(2, 21, 33, 0.6); }
   .events__event .meta {
     font-style: italic; }
 
@@ -1054,7 +1074,7 @@ blockquote {
       .projects__project:nth-child(even) {
         margin-right: 0;
         clear: right; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 690px) {
     .projects__project {
       width: 100%; } }
   @media screen and (min-width: 960px) {
@@ -1088,7 +1108,7 @@ blockquote {
   .projects__project-body .expand,
   .projects__project-body .expand-core {
     position: absolute;
-    bottom: 20px;
+    bottom: 18px;
     right: 20px;
     box-shadow: -5px 0 0 #fff;
     border-bottom: 2px solid #F0F0F0;
@@ -1112,7 +1132,7 @@ blockquote {
   .home .projects__project:nth-child(2) {
     display: block; } }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 690px) {
   .home .projects__container {
     padding: 0; }
   .home .projects__project {
@@ -1131,7 +1151,7 @@ blockquote {
   .about-us {
     padding: 0 40px; } }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 690px) {
   .about-us {
     padding: 0; } }
 
@@ -1156,7 +1176,7 @@ blockquote {
       .about-us-dl:nth-child(odd) {
         margin-left: 0;
         clear: left; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 690px) {
     .about-us-dl {
       width: 100%;
       margin-left: 0; } }
@@ -1165,15 +1185,23 @@ blockquote {
       margin-left: 0;
       clear: left; } }
   .about-us-dl.about-us-dl--open-source {
-    background-image: url("../img/ico-opensource.svg"); }
+    background-image: url("../img/ico-opensource.svg");
+    background-size: 50px 50px; }
   .about-us-dl.about-us-dl--functional {
-    background-image: url("../img/ico-functional.svg"); }
+    background-image: url("../img/ico-functional.svg");
+    background-size: 31px 50px; }
   .about-us-dl.about-us-dl--shared {
-    background-image: url("../img/ico-shared.svg"); }
+    background-image: url("../img/ico-shared.svg");
+    background-size: 45px 48px; }
   .about-us-dl.about-us-dl--resources {
-    background-image: url("../img/ico-resources.svg"); }
+    background-image: url("../img/ico-resources.svg");
+    background-size: 50px 40px; }
   .about-us-dl.about-us-dl--friendly {
-    background-image: url("../img/ico-friendly.svg"); }
+    background-image: url("../img/ico-friendly.svg");
+    background-size: 60px 43px; }
+  .about-us-dl.about-us-dl--modular {
+    background-image: url("../img/ico-modular.svg");
+    background-size: 56px 39px; }
   .about-us-dl dt {
     position: relative;
     margin-bottom: 20px; }
@@ -1223,7 +1251,7 @@ blockquote {
         float: none;
         margin-left: auto;
         margin-right: auto; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 690px) {
     .contact__item {
       width: 100%;
       margin-left: 0; } }
@@ -1245,6 +1273,11 @@ blockquote {
 .contact__item--email {
   background-image: url("../img/ico-email.svg");
   background-size: 32px 32px; }
+
+#CoC {
+  display: none; }
+  #CoC:target {
+    display: block; }
 
 /* PROJECTS PAGE
 ========================================================================== */
@@ -1271,7 +1304,7 @@ blockquote {
     .list .list__item .list__item-slug {
       float: right;
       color: rgba(2, 21, 33, 0.6); }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 690px) {
         .list .list__item .list__item-slug {
           display: none; } }
     .list .list__item h6 {
@@ -1298,7 +1331,7 @@ blockquote {
     content: "";
     display: table;
     clear: both; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 690px) {
     .event__hero {
       padding: 100px 0; } }
   .event__hero:before {
@@ -1318,7 +1351,7 @@ blockquote {
     z-index: 1; }
   .event__hero h1 {
     font-size: 4em; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .event__hero h1 {
         font-size: 2em; } }
   .event__hero strong {
@@ -1329,7 +1362,7 @@ blockquote {
     margin-top: 40px;
     margin-bottom: 0;
     color: #fff; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .event__hero .hero__lead {
         font-size: 1em;
         margin-top: 20px; } }
@@ -1344,7 +1377,7 @@ blockquote {
       content: "";
       display: table;
       clear: both; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .event__hero .event__header {
         display: none; } }
     .event__hero .event__header p {
@@ -1362,14 +1395,15 @@ blockquote {
       @media screen and (max-width: 960px) {
         .event__hero .navigation li {
           margin-right: 40px; } }
+      .event__hero .navigation li:hover a {
+        color: #fff; }
       .event__hero .navigation li:last-of-type {
         margin-right: 0;
         clear: right; }
       .event__hero .navigation li a {
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.8); }
-        .event__hero .navigation li a:hover  {
-          color: #fff; }
+        color: rgba(255, 255, 255, 0.8);
+        transition: 0.2s all ease; }
 
 /* BLOG
 ========================================================================== */
@@ -1476,12 +1510,15 @@ blockquote {
         width: 100%;
         margin: 0 auto 10px;
         text-align: center; } }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 690px) {
       .footer p {
         margin-bottom: 20px; } }
     .footer p a {
-      color: #FA7476;
-      text-decoration: none; }
+      color: #F95A66;
+      text-decoration: none;
+      border-bottom: 1px solid transparent; }
+      .footer p a:hover {
+        border-bottom-color: #F95A66; }
   .footer .navigation {
     float: right;
     margin: 0;
@@ -1494,14 +1531,17 @@ blockquote {
       list-style: none;
       display: inline-block;
       margin-right: 60px; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 690px) {
         .footer .navigation li {
           margin-right: 20px; } }
       .footer .navigation li:last-of-type {
         margin-right: 0; }
       .footer .navigation li a {
         color: #8F9293;
-        text-decoration: none; }
+        text-decoration: none;
+        transition: 0.2s all ease; }
+        .footer .navigation li a:hover {
+          color: #fff; }
 
 /* HELPERS
 ========================================================================== */
