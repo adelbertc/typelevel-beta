@@ -4,7 +4,8 @@ title: Typelevel.scala
 class: home
 ---
 
-</div>
+</div> <!-- Closing the wrapper -->
+
 <div class="hero">
   <h1>{{ site.name }}</h1>
   <p class="hero__lead">{{ site.description }}</p>
@@ -12,7 +13,7 @@ class: home
 
 <div class="wrapper">
 
-<div class="section events">
+<div class="section events js-fade-in">
   <h2>Upcoming Events</h2>
   <p>An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features.</p>
 
@@ -23,14 +24,14 @@ class: home
       <span class="meta">{{ event.date_string }}</span>
       <p>
        {{ event.description }}
-       {% if event.papers_section %}<a class="btn text" href="{{ event.url | append:'#papers' }}">Call for Papers</a> now open.{% endif %}
+       {% if event.papers_section %}<a class="btn text" href="{{ event.url | append:'#call-for-papers' }}">Call for Papers</a> now open.{% endif %}
       </p>
       <a class="btn large center" href="{{ event.url }}">Learn More</a>
     </div>
   {% endfor %}
 </div>
 
-<div class="section projects">
+<div class="section projects js-fade-in">
   <h2>Projects</h2>
   <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.</p>
   
@@ -56,7 +57,7 @@ class: home
   <a class="btn large center" href="/projects">More Projects</a>
 </div>
 
-<div class="section about-us">
+<div class="section about-us js-fade-in">
   <h2>About typelevel.scala</h2>
   <p>Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more. Design goals are approachability, modularity, documentation and efficiency.</p>
 

@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<div class="post content content-small">
+<div class="post content content-small js-fade-in">
   <h2>{{ page.title }}</h2>
 
   {{ content }}
 
-  <div class="post__author">
+  <div class="post__author js-fade-in">
     {% assign author = site.data.authors[page.meta.author] %}
     {% if author %}
       {% if author.portrait %}

@@ -5,7 +5,7 @@ title: Blog
 <div class="content content-small pull-left">
   <div class="posts">
     {% for post in paginator.posts %}
-    <div class="post">
+    <div class="post js-fade-in">
       <h2>
         <a href="{{ post.url }}">{{ post.title }}</a>
       </h2>
@@ -25,7 +25,7 @@ title: Blog
     {% endfor %}
 
     <!-- Pagination links -->
-    <div class="pagination">
+    <div class="pagination js-fade-in">
       {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path }}" class="btn text prev">Previous</a>
       {% endif %}
@@ -36,7 +36,7 @@ title: Blog
   </div>
 </div>
 
-<div class="sidebar">
+<div class="sidebar js-fade-in">
   <h4>About Blog</h4>
   <p class="sidebar__about">Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.</p>
 

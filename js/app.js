@@ -1,4 +1,6 @@
 $(function() {
+  $("body").removeClass("no-js");
+
   // Subnavigation hide/show
   $('.js-subnav').click(function(e) {
     e.stopPropagation();
@@ -69,6 +71,23 @@ $(function() {
     $('html,body').animate({
       scrollTop: $('#CoC').offset().top - 20
     }, 1000);
-  });
-  
+  });  
+
+  fadeInScroll();
 });
+
+// Fade in on scroll
+$(window).scroll( function(){
+  fadeInScroll();
+});
+
+function fadeInScroll() {
+  $('.js-fade-in').each( function(i){
+    var bottom_of_object = $(this).offset().top;
+    var bottom_of_window = $(window).scrollTop() + $(window).height();
+    
+    if( bottom_of_window > bottom_of_object  ){
+        $(this).animate({'opacity':'1'},500);
+    }
+  });
+}

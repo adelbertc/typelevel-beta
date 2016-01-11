@@ -4,18 +4,19 @@
 @import "variables";
 @import "mixins";
 @import "syntax";
+@import "fonts";
 
 
 
-/* BASICS
+/* BASICS/COMMON
 ========================================================================== */
 body {
+  height: 100%;
   background-color: white;
   background-image: url('../img/bg-pattern.svg');
   background-repeat: repeat-x;
   font-family: $sans-serif;
   color: $dark-grey;
-  height: 100%;
 }
 
 p {
@@ -27,9 +28,9 @@ h1,
 h2,
 h3,
 h4 {
+  margin: 0;
   font-family: $serif;
   font-weight: bold;
-  margin: 0;
 }
 
 h1 {
@@ -37,28 +38,26 @@ h1 {
 }
 
 h2 {
+  margin-bottom: $spacing-unit * 1.5;
   font-size: 2.1em;
   letter-spacing: 0.01em;
-  margin-bottom: $spacing-unit * 1.5;
 }
 
 h3 {
-  font-weight: bold;
-  font-size: 1.4em;
-  color: $black;
   margin-bottom: $spacing-unit;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 h4 {
-  font-weight: normal;
   font-size: 1.1em;
-  color: $black;
+  font-weight: normal;
 }
 
 h6 {
-  font-size: 1em;
-  font-weight: $font-medium;
   margin-top: 0;
+  font-size: 1em;
+  font-weight: normal;
 }
 
 @include media-query($small) {
@@ -82,19 +81,24 @@ a {
 
 b,
 strong {
-  font-weight: $font-medium;
+  font-weight: normal;
   color: $black;
+}
+
+em {
+  font-family: $italic;
+  font-style: normal; // because webfont
 }
 
 .btn {
   display: inline-block;
-  color: #fff;
-  background-color: $orange;
-  border-radius: 420px;
-  text-decoration: none;
   padding: 4px 15px;
+  background-color: $orange;
   font-size: 0.9em;
   font-family: $sans-serif;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 420px;
   @include ease;
 
   &:hover {
@@ -103,24 +107,25 @@ strong {
 
   &.large {
     display: block;
-    text-align: center;
     width: 180px;
     margin-top: $spacing-unit * 1.5;
-    font-size: 1em;
     padding: 8px 0;
+    font-size: 1em;
+    text-align: center;
   }
 
   &.text {
-    font-size: 1em;
     padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-    color: $orange;
     padding-bottom: 2px;
-    border-bottom: 2px solid rgba($orange, .2); 
+    background-color: transparent;
+    font-size: 1em;
+    color: $orange;
+    border-radius: 0;
+    border-bottom: 2px solid rgba($orange, .2);
 
     &:hover {
       background-color: transparent;
+      border-bottom-color: rgba($orange, .6);
     }
   }
 
@@ -137,10 +142,10 @@ pre {
 
 p code {
   padding: 1px 4px;
-  background: $border;
+  background-color: $border;
   font-size: 0.9em;
-  @include box-shadow(0 0 0 1px rgba(#fff, .1));
   border-radius: 3px;
+  @include box-shadow(0 0 0 1px rgba(#fff, .1));
 }
 
 blockquote {
@@ -149,7 +154,7 @@ blockquote {
   padding-left: $spacing-unit;
 }
 
-.tag {
+.tag { // for categories, tags, labels
   @extend .btn;
   background-color: $light-grey;
   color: rgba($black, .6);
@@ -160,11 +165,11 @@ blockquote {
 }
 
 .side-note {
-  color: rgba($black, .6);
   font-family: $serif;
-  font-style: italic;
   font-size: 0.95em;
+  font-style: italic;
   line-height: 1.7;
+  color: rgba($black, .6);
 }
 
 .wrapper {
@@ -177,7 +182,7 @@ blockquote {
   }
 }
 
-.content {
+.content { // for articles for example
   h1,
   h2,
   h3,
@@ -202,10 +207,10 @@ blockquote {
   }
 
   .btn.large {
-    width: auto;
+    display: inline-block;
+    width: auto; // reset
     padding-left: 24px;
     padding-right: 24px;
-    display: inline-block;
   }
 }
 
@@ -220,30 +225,29 @@ blockquote {
 
 
 
-/* HERO/HOME
+/* HEADER + NAVIGATION
 ========================================================================== */
 .header {
   position: relative;
   background-color: #fff;
-  @include box-shadow(0 1px 0 rgba($black, .1), 0 1px 3px rgba($black, .1));
-  z-index: 1337;
   line-height: $spacing-unit * 4;
+  z-index: 1337;
+  @include box-shadow(0 1px 0 rgba($black, .1), 0 1px 3px rgba($black, .1));
   @include clearfix;
 
   .header__logo {
     float: left;
-    text-indent: -13337px;
+    width: 140px; height: 100%;
     background-image: url('../img/logo.svg');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 140px 47px;
-    width: 140px; height: 100%;
+    text-indent: -13337px;
     overflow: auto;
 
     a {
       color: $black;
       text-decoration: none;
-      font-weight: $font-medium;
     }
   }
 
@@ -264,9 +268,9 @@ blockquote {
     padding: 0;
 
     li {
-      list-style: none;
       display: inline-block;
       margin-right: $spacing-unit * 3;
+      list-style: none;
 
       &:last-of-type {
         margin-right: 0;
@@ -288,27 +292,26 @@ blockquote {
     li.active a,
     span.active {
       color: $black;
-      font-weight: $font-medium;
     }
 
     .subnav {
-      padding: $spacing-unit / 2;
-      border-radius: 2px;
       position: absolute;
-      background: #fff;
+      padding: $spacing-unit / 2;
       max-width: 200px;
-      line-height: 1.4;
-      text-align: center;
-      @include box-shadow(0 0 0 1px rgba($black, .1), 0 1px 2px rgba($black, .1));
-      // @include transform(translateX(-50%));
       margin-top: -$spacing-unit;
       margin-left: -100px + $spacing-unit;
-      @include transition(all .3s cubic-bezier(0.35,1.60,0.7,1));
-      @include transform(scale(0));
-      transform-origin: 50% -10px;
+      background-color: #fff;
+      line-height: 1.4;
+      text-align: center;
+      border-radius: 2px;
       opacity: 0;
+      @include box-shadow(0 0 0 1px rgba($black, .1), 0 1px 2px rgba($black, .1)); // shadow and border
+      @include transition(all .3s cubic-bezier(0.35,1.60,0.7,1)); // spring animation
+      @include transform(scale(0)); // scale to 0 for animation
+      transform-origin: 50% -10px; // origin from top
 
       &.visible {
+        display: block;
         opacity: 1;
         @include transform(scale(1));
       }
@@ -321,31 +324,33 @@ blockquote {
 
         &:last-of-type {
           margin-bottom: 0;
-          border-bottom: 0;
           padding-bottom: 0;
+          border-bottom: 0;
         }
       }
     }
 
     @include media-query($small) {
+      position: relative;
       display: none;
       float: none;
-      position: relative;
+      width: 100%;
+      padding-bottom: $spacing-unit;
       background-color: #fff;
       line-height: 1;
-      width: 100%;
-      clear: both;
-      padding-bottom: $spacing-unit;
       text-align: right;
+      clear: both;
 
       &.visible {
         display: block;
+        opacity: 1;
+        @include transform(scale(1));
       }
-
+      
       li {
         display: block;
-        margin-bottom: $spacing-unit;
         width: 100%;
+        margin-bottom: $spacing-unit;
 
         &:last-child {
           margin-bottom: 0;
@@ -354,17 +359,17 @@ blockquote {
 
       .subnav {
         position: relative;
-        margin: 0;
         display: none;
         max-width: 100%;
-        @include box-shadow(none);
+        margin: 0;
         padding: 0;
         text-align: right;
+        @include box-shadow(none); // no shadow on mobile
 
         li {
-          padding: 0;
           margin-top: $spacing-unit;
           margin-bottom: 0;
+          padding: 0;
           border: none;
 
           a {
@@ -378,12 +383,12 @@ blockquote {
 
 
 
-/* HERO/HOME
+/* HERO ON HOME
 ========================================================================== */
 .hero {
   position: relative;
   width: 100%;
-  padding: $spacing-unit * 8.5 0;
+  padding: $spacing-unit * 10.5 0 $spacing-unit * 6.5;
   background-color: $dark-red;
   background-image: url('../img/bg.jpg');
   background-size: cover;
@@ -400,18 +405,18 @@ blockquote {
     padding-right: $spacing-unit;
   }
   
-  // Logo in hero
+  // Logo glyph in hero
   &:before {
-    width: 100%;
     position: absolute;
-    left: 0; right: 0; top: 2em;
-    height: 7em;
+    left: 0; right: 0; top: 4em;
+    width: 100%; height: 7em;
     background-image: url('../img/logo-hero.svg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
-    content: "";
     opacity: .2;
+    content: "";
+    @include animate(pulsate, 3s, 2, normal, ease-in-out); // up and down two times
 
     @include media-query($small) {
       height: 5em;
@@ -419,8 +424,8 @@ blockquote {
   }
 
   h1 {
-    font-size: 4em;
     margin-bottom: $spacing-unit * 1.5;
+    font-size: 4em;
 
     @include media-query($small) {
       font-size: 2em;
@@ -429,8 +434,8 @@ blockquote {
 
   .hero__lead {
     max-width: 30em;
-    font-size: 1.2em;
     margin: 0 auto;
+    font-size: 1.2em;
     color: #fff;
 
     @include media-query($small) {
@@ -439,6 +444,10 @@ blockquote {
   }
 }
 
+
+
+/* SECTIONS ON HOME
+========================================================================== */
 .section {
   margin-top: $spacing-unit * 4;
   @include clearfix;
@@ -447,23 +456,24 @@ blockquote {
     text-align: center;
 
     & + p {
-      text-align: center;
       max-width: $small;
-      margin-right: auto;
       margin-left: auto;
+      margin-right: auto;
       margin-bottom: 3em;
+      text-align: center;
       color: rgba($black, .6);
     }
   }
 }
 
+// EVENTS
 .events__event {
   position: relative;
+  float: left;
   width: 46%;
   margin-right: 8%;
-  float: left;
-  overflow: hidden;
   text-align: center;
+  overflow: hidden;
 
   @include media-query($small) {
     width: 100%;
@@ -481,7 +491,7 @@ blockquote {
   }
 
   h3 {
-    margin-top: $spacing-unit * 3;
+    margin-top: $spacing-unit;
   }
 
   p,
@@ -490,15 +500,14 @@ blockquote {
   }
 
   .meta {
-    font-style: italic;
+    font-family: $italic;
   }
 }
 
 .events__event-poster {
   position: relative;
   display: block;
-  width: 100%;
-  height: 260px;
+  width: 100%; height: 260px;
   margin-left: $spacing-unit;
   background-size: cover;
   text-align: left;
@@ -506,29 +515,18 @@ blockquote {
   @include media-query($content) {
     height: 190px;
   }
-
-  &:before {
-    position: absolute;
-    width: 100%; // fallback
-    width: calc(100% - 20px);
-    height: 100%;
-    margin-left: -$spacing-unit;
-    margin-top: $spacing-unit;
-    border: 3px solid $red;
-    content: "";
-    z-index: -1;
-  }
 }
 
+// PROJECTS
 .projects__container {
   @include clearfix;
 }
 
 .projects__project {
+  float: left;
   width: 32%;
   margin-right: 2%;
   margin-bottom: $spacing-unit;
-  float: left;
   border: 1px solid $border;
   @include box-shadow(0 1px 2px rgba($black, .05));
 
@@ -568,8 +566,8 @@ blockquote {
 }
 
 .projects__project-header {
-  border-bottom: 1px solid $border;
   padding: $spacing-unit;
+  border-bottom: 1px solid $border;
   @include clearfix;
 
   h4 {
@@ -578,10 +576,19 @@ blockquote {
   }
 }
 
+.ico-repo {
+  display: inline-block;
+  width: 26px; height: 26px;
+  background-image: url('../img/ico-repo.svg');
+  background-repeat: no-repeat;
+  vertical-align: -35%;
+  margin-right: $spacing-unit / 2;
+}
+
 .projects__project-body {
   position: relative;
-  padding: $spacing-unit;
   max-height: 200px;
+  padding: $spacing-unit;
   overflow: hidden;
 
   &.expanded {
@@ -592,11 +599,16 @@ blockquote {
   .expand-core {
     position: absolute;
     bottom: $spacing-unit - 2px; right: $spacing-unit;
-    @include box-shadow(-5px 0 0 #fff);
-    border-bottom: 2px solid $border;
     background-color: #fff;
+    border-bottom: 2px solid $border;
     color: $black;
     cursor: pointer;
+    @include box-shadow(-5px 0 0 #fff);
+    @include ease;
+
+    &:hover {
+      border-bottom-color: rgba($black, .2);
+    }
   }
 
   p {
@@ -637,49 +649,28 @@ blockquote {
     .projects__project {
       width: 100%;
       margin-right: 0;
-      margin-bottom: $spacing-unit
+      margin-bottom: $spacing-unit;
     }
   }
 }
 
-.projects-core {
-  .projects__project {
-    width: 100%;
-    height: auto;
-  }
-
-  .projects__project-body {
-    max-height: 100%;
-  }
-}
-
-@include media-query($content) {
-  .about-us {
-    padding: 0 $spacing-unit * 2;
-  }
-}
-
-@include media-query($small) {
-  .about-us {
-    padding: 0;
-  }
-}
 
 
+/* ABOUT ITEMS (for both / and /about)
+========================================================================== */
 .about-us-dl {
-  width: 32%;
-  height: 240px;
-  margin-left: 2%;
+  float: left;
+  width: 32%; height: 240px;
   margin-top: 0;
   margin-bottom: $spacing-unit;
-  float: left;
-  text-align: center;
-  border: 1px solid $border;
+  margin-left: 2%;
   padding: $spacing-unit;
   padding-top: $spacing-unit * 5.5;
-  @include box-shadow(0 1px 2px rgba($black, .05));
   background-position: center $spacing-unit * 2;
   background-repeat: no-repeat;
+  border: 1px solid $border;
+  text-align: center;
+  @include box-shadow(0 1px 2px rgba($black, .05));
 
   @include media-query($content) {
     width: 49%;
@@ -752,7 +743,7 @@ blockquote {
 
 
 
-/* ABOUT
+/* ABOUT PAGE
 ========================================================================== */
 .contact__items {
   margin-bottom: $spacing-unit * 4;
@@ -760,17 +751,17 @@ blockquote {
 }
 
 .contact__item {
+  float: left;
   display: block;
-  text-align: center;
-  text-decoration: none;
   width: 32%;
   margin-left: 2%;
-  float: left;
   padding: $spacing-unit;
-  @include box-shadow(inset 0 0 0 1px $border);
   background-repeat: no-repeat;
   background-position: $spacing-unit center;
+  text-align: center;
+  text-decoration: none;
   line-height: 32px;
+  @include box-shadow(inset 0 0 0 1px $border);
   
   @include media-query($content) {
     width: 49%;
@@ -809,25 +800,22 @@ blockquote {
   background-image: url('../img/ico-groups.png');
   background-size: 30px 32px;
 }
-
 .contact__item--gitter {
   background-image: url('../img/ico-gitter.svg');
   background-size: 32px 32px;
 }
-
 .contact__item--email {
   background-image: url('../img/ico-email.svg');
   background-size: 32px 32px;
 }
 
-#CoC {
+#CoC { // code of conduct, is hidden on default
   display: none;
 
   &:target {
     display: block;
   }
 }
-
 
 
 
@@ -840,6 +828,32 @@ blockquote {
     &:first-of-type {
       margin-top: $spacing-unit * 4;
     }
+
+    &.macros {
+      margin-top: 0;
+    }
+  }
+}
+
+.projects-core {
+  .projects__project {
+    width: 100%; height: auto;
+  }
+
+  .projects__project-body {
+    max-height: 100%;
+  }
+}
+
+@include media-query($content) {
+  .about-us {
+    padding: 0 $spacing-unit * 2;
+  }
+}
+
+@include media-query($small) {
+  .about-us {
+    padding: 0;
   }
 }
 
@@ -848,13 +862,13 @@ blockquote {
 
   .list__item {
     width: 100%;
-    border-top: 1px solid $border;
     padding: $spacing-unit 0;
+    border-top: 1px solid $border;
     @include clearfix; 
 
     &:first-child {
-      border-top: 0;
       padding-top: 0;
+      border-top: 0;
     }
 
     &:last-child {
@@ -872,9 +886,9 @@ blockquote {
 
     h6 {
       display: inline-block;
-      font-size: 1em;
       margin: 0;
-      font-weight: $font-medium;
+      font-size: 1em;
+      font-weight: normal;
       color: $black;
     }
   }
@@ -882,13 +896,14 @@ blockquote {
 
 
 
-/* EVENTS
+/* EVENT PAGES
 ========================================================================== */
 .event__hero {
   position: relative;
   width: 100%;
   margin-bottom: $spacing-unit * 4;
   padding: 0 0 $spacing-unit * 6;
+  // background-image: provided in layout (event.html)
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -903,8 +918,8 @@ blockquote {
 
   &:before {
     position: absolute;
-    width: 100%; height: 100%;
     top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
     background-color: $dark-blue;
     opacity: .6;
     content: "";
@@ -925,19 +940,20 @@ blockquote {
   }
 
   strong {
+    font-family: $italic;
+    font-weight: inherit;
     color: inherit;
-    font-weight: $font-bold;
   }
 
   .hero__lead {
-    font-size: 1.2em;
     margin-top: $spacing-unit * 2;
     margin-bottom: 0;
+    font-size: 1.2em;
     color: #fff;
 
     @include media-query($small) {
-      font-size: 1em;
       margin-top: $spacing-unit;
+      font-size: 1em;
     }
   }
 
@@ -963,9 +979,9 @@ blockquote {
 
   .navigation {
     float: right;
-    list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
 
     li {
       display: inline-block;
@@ -1002,8 +1018,8 @@ blockquote {
 }
 
 .sidebar {
-  width: $content - $content-small - $spacing-unit * 3;
   float: right;
+  width: $content - $content-small - $spacing-unit * 3; // calc the sidebar width with margin and content width
   margin-top: $spacing-unit * 4;
   margin-left: $spacing-unit * 3;
   padding-left: $spacing-unit;
@@ -1018,35 +1034,35 @@ blockquote {
   }
   
   .btn.text {
-    margin-top: $spacing-unit / 2;
-    display: block;
     float: left;
+    display: block;
+    margin-top: $spacing-unit / 2;
     clear: left;
   }
 }
 
-.post__author { // on /blog/:title
+.post__author { // on permalink
   margin-top: $spacing-unit * 2;
   margin-bottom: $spacing-unit * 2;
+  padding: $spacing-unit 0;
   border-top: 1px solid $border;
   border-bottom: 1px solid $border;
-  padding: $spacing-unit 0;
   @include clearfix;
 
   p {
-    margin-bottom: $spacing-unit / 2;
     margin-top: $spacing-unit / 2;
+    margin-bottom: $spacing-unit / 2;
   }
 
   .portrait {
+    float: left;
+    display: block;
     width: 80px; height: 80px;
     margin-right: $spacing-unit;
-    display: block;
-    float: left;
   }
 }
 
-.post__meta { // on /blog
+.post__meta { // on post list (/blog)
   margin-top: $spacing-unit;
   color: rgba($black, .6);
   @include clearfix;
@@ -1060,8 +1076,8 @@ blockquote {
 }
 
 .portrait {
-  display: block;
   float: left;
+  display: block;
   width: 50px; height: 50px;
   margin-right: $spacing-unit / 2;
   border-radius: 420px;
@@ -1085,16 +1101,15 @@ blockquote {
 
 
 
-
 /* FOOTER
 ========================================================================== */
 .footer {
   width: 100%;
+  margin-top: $spacing-unit * 4;
   background: $dark-grey;
-  color: #fff;
   font-size: 0.9em;
   line-height: $spacing-unit * 4;
-  margin-top: $spacing-unit * 4;
+  color: #fff;
   @include clearfix;
 
   @include media-query($content) {
@@ -1119,9 +1134,9 @@ blockquote {
     }
 
     a {
+      border-bottom: 1px solid transparent;
       color: $orange;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
 
       &:hover {
         border-bottom-color: $orange;
@@ -1140,9 +1155,9 @@ blockquote {
     }
 
     li {
-      list-style: none;
       display: inline-block;
       margin-right: $spacing-unit * 3;
+      list-style: none;
 
       @include media-query($small) {
         margin-right: $spacing-unit * 1;
@@ -1177,11 +1192,22 @@ blockquote {
   float: right;
 }
 
-.ico-repo {
-  display: inline-block;
-  width: 26px; height: 26px;
-  background-image: url('../img/ico-repo.svg');
-  background-repeat: no-repeat;
-  vertical-align: -35%;
-  margin-right: $spacing-unit / 2;
+.js-fade-in {
+  opacity: 0;
+}
+
+.no-js .js-fade-in { // if no js, we don't want to hide all of our content
+  opacity: 1;
+}
+
+@include keyframes(pulsate) { // keyframe animation 
+  0% {
+    @include transform(translateY(0));
+  }
+  65% {
+    @include transform(translateY(10px));
+  }
+  100% {
+    @include transform(translateY(0));
+  }
 }

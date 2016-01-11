@@ -19,6 +19,13 @@ gzip:
   - .html
   - .css
   - .md
+  - .js
+  - .svg
+  - .jpg
+  - .woff2
+  - .eot
+  - .ttf
+  - .woff
 # gzip_zopfli: true
 
 # See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints

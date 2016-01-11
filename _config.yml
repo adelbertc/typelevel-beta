@@ -1,5 +1,11 @@
 name: Typelevel.scala
 description: Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.
+twitter: typelevel
+email: info@typelevel.org
+gitter: //gitter.com
+google_groups: //google.com
+
+# Configurations
 markdown: redcarpet
 redcarpet:
     extensions: [with_toc_data]
@@ -24,9 +30,5 @@ defaults:
     scope:
       type: "posts"
     values:
-      permalink: /blog/:title/
-
-twitter: typelevel
-email: info@typelevel.org
-gitter: //gitter.com
-google_groups: //google.com
+      permalink: /blog/:year/:month/:day/:title.html
+      relative_permalinks: false
