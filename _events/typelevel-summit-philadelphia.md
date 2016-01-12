@@ -1,13 +1,15 @@
 ---
 layout: event
+
 title: "Typelevel Summit Philadelphia"
 date: 02-03-16
-
-description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
-poster_hero: "/img/media/philly.jpg"
-poster_thumb: "/img/media/philly-thumb.jpg"
 date_string: "March 2-3, 2016"
 location: "Hub's Cira Centre"
+description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
+
+poster_hero: "/img/media/philly.jpg"
+poster_thumb: "/img/media/philly-thumb.jpg"
+
 location_section: true
 papers_section: true
 sponsors_section: true

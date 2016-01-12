@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ site.name }} | {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+
+
+    <link rel="mask-icon" href="{{ site.baseurl }}/img/favicon-safari.svg" color="#F51C2B">
+    <link href="{{ site.baseurl }}/img/favicon.png" rel="icon" type="image/x-icon">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -24,7 +29,7 @@
         <a href="#" class="header__menu">
           Menu
         </a>
-        <ul class="navigation">
+        <ul class="navigation" role="navigation">
           <li {% if page.path contains 'projects' %} class="active" {% endif %}>
             <a href="/projects">Projects</a>
           </li>

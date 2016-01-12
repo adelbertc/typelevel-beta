@@ -117,3 +117,6 @@ Sample front matter for a page:
 layout: page
 title: "Code of Conduct"
 ````
+
+### Global variables
+Some variables that are used throughout the website are stored inside the `_config.yml` file, such as social links or usernames. It also includes some configurations. 

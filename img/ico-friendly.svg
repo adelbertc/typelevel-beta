@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-69 49 60 43"
-	 style="enable-background:new -69 49 60 43;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#E74E40;}
-</style>
-<title>icon</title>
-<desc>Created with Sketch Beta.</desc>
-<g>
-	<path class="st0" d="M-25,90V49h-28v41h-16v2h18l19-4V53l-12.7-2H-27v39.5V92h18v-2H-25z M-34,55v31.5L-51,90V52L-34,55z"/>
-	<circle class="st0" cx="-38" cy="70" r="2"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-69 49 60 43" enable-background="new -69 49 60 43"><style type="text/css">.st0{fill:#E74E40;}</style><title>icon</title><desc>Created with Sketch Beta.</desc><path class="st0" d="M-25 90v-41h-28v41h-16v2h18l19-4v-35l-12.7-2h17.7v41h18v-2h-16zm-9-35v31.5l-17 3.5v-38l17 3z"/><circle class="st0" cx="-38" cy="70" r="2"/></svg>
