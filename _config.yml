@@ -11,7 +11,8 @@ redcarpet:
     extensions: [with_toc_data]
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
-permalink: pretty
+permalink: /blog/:year/:month/:day/:title.html
+relative_permalinks: false
 paginate: 10
 paginate_path: "/blog/:num/"
 
@@ -24,11 +25,3 @@ collections:
     layout: event
   projects:
     output: false
-
-defaults:
-  -
-    scope:
-      type: "posts"
-    values:
-      permalink: /blog/:year/:month/:day/:title.html
-      relative_permalinks: false
