@@ -6,7 +6,7 @@ short_title: "Philadelphia Summit"
 date: 02-03-16
 date_string: "March 2-3, 2016"
 location: "Hub's Cira Centre"
-description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
+description: "One day of recorded talks and one day of unconference, co-located with NE Scala."
 
 poster_hero: "/img/media/philly.jpg"
 poster_thumb: "/img/media/philly-thumb.jpg"

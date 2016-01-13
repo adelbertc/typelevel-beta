@@ -6,7 +6,7 @@ short_title: "Oslo Summit"
 date: 04-05-16
 date_string: "May 4, 2016"
 location: "Teknologihuset"
-description: "An experimental library intended to provide abstractions for functional programming in Scala, leveraging its unique features."
+description: "One day of talks, co-located with flatMap(Oslo)."
 
 poster_hero: "/img/media/oslo.jpg"
 poster_thumb: "/img/media/oslo-thumb.jpg"
