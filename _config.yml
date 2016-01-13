@@ -2,8 +2,8 @@ name: Typelevel.scala
 description: Let the Scala compiler work for you. We provide type classes, instances, conversions, testing, supplements to the standard library, and much more.
 twitter: typelevel
 email: info@typelevel.org
-gitter: //gitter.com
-google_groups: //google.com
+gitter: "https://gitter.im/orgs/typelevel/rooms"
+google_groups: "https://groups.google.com/group/typelevel"
 
 # Configurations
 markdown: redcarpet
