@@ -2,6 +2,7 @@
 layout: event
 
 title: "Typelevel Summit Philadelphia"
+short_title: "Philadelphia Summit"
 date: 02-03-16
 date_string: "March 2-3, 2016"
 location: "Hub's Cira Centre"
@@ -15,32 +16,23 @@ papers_section: true
 sponsors_section: true
 ---
 
-## About Summit
-The Summits are open to all, not just current contributors to and users of the Typelevel projects, and we are especially keen to encourage participation from people who are new to them. Whilst many of the Typelevel projects use somewhat "advanced" Scala, they are a lot more approachable than many people think, and a major part of Typelevel's mission is to make the ideas they embody much more widely accessible. So, if you're interested in types and pure functional programming, want to make those ideas commonplace and are willing to abide by the Typelevel code of conduct, then the Summits are for you and we'd love to see you there.
+## About the Summit
+
+The first Typelevel Summit will be co-located with the <a href="http://www.nescala.org/">Northeast Scala Symposium</a> in Philadelphia.
+There will be one day of recorded talks and one day of unconference.
 
 ## Call for Papers
-The Summit will feature both 30 minute and 15 minute-long talks.  
-Possible topic ranges include, but are not limited to: 
 
-- Experience reports: "How we migrated our code base to shapeless" 
-- Typelevel project updates: "What's new in Typelevel project X" 
-- Your project updates: "What's new in X", where X uses Typelevel heavily 
-- Big picture: "Where is Scala headed for typed FP?" 
-- Tutorial-style: "Error-handling with cats", "Idiomatic ScalaCheck" 
-- Tooling: "We can now use Ensime in Notepad" 
-- Related work: "How language X does typed FP and what we could learn" 
-- Non-tech issues: "Diversity in the Scala community", "Governance in Typelevel"
+The Summit will feature both 30 minute and 15 minute-long talks.
+The Call for Papers is joint with the <a href="/event/2016-05-summit-oslo/">Oslo Summit</a>.
+Talks for the Philadelphia Summit are accepted until January 25th.
 
-Proposals should be related to the Typelevel family in some way or follow the Typelevel spirit.
-
-<a class="btn large" href="#">Submit your talk here</a>
+<a class="btn large" href="http://goo.gl/forms/SX3plxsOKb">Submit your talk here</a>
 
 ## Sponsors
-The planning phase is in full swing and we’ll announce more details soon. Attendance will probably be limited to about 100.
 
 <a class="btn large" href="#">Become a sponsor</a>
 
-Speakers and schedule are coming soon...
+## Venue
 
-# Venue
-This event will take place at Hub's Cira Centre.
+This event will take place at Hub's Cira Centre, next to 30th Street Station.
